@@ -8,10 +8,10 @@ import './Header.css'
 const Header = () => (
   <div className="header">
     <Navbar>
-      <Navbar.Brand><h1>Algorithm Fun</h1></Navbar.Brand>
+      <Navbar.Brand><h1>Data Structure Fun</h1></Navbar.Brand>
         <Nav>
           <NavLink className="nav-link" to="/">Home</NavLink>
-          <NavLink className="nav-link" to="/arrays">Arrays</NavLink>
+          <NavLink className="nav-link" to="/array">Arrays</NavLink>
           <a className="nav-link" href="https://robert-a-johnston.github.io/"
             target="_blank" rel="noreferrer">Portfolio</a>
         </Nav>     
