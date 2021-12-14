@@ -4,6 +4,7 @@ import './App.css'
 import Header from './components/header/Header'
 import Home from './components/home/Home'
 import Array from './components/Array/array'
+import SingleLinkedList from './components/single-linked-list/SingleLinkedList'
 import BinarySearchTree from './components/binary-search-tree/BinarySearchTree'
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
           <Route
             path='/array'
             element={<Array/>}/>
+           <Route
+            path='/singleLinkedList'
+            element={<SingleLinkedList/>}/>
           <Route
             path='/binaryTree'
             element={<BinarySearchTree/>}/>

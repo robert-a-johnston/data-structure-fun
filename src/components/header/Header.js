@@ -12,6 +12,7 @@ const Header = () => (
         <Nav>
           <NavLink className="nav-link" to="/">Home</NavLink>
           <NavLink className="nav-link" to="/array">Arrays</NavLink>
+          <NavLink className="nav-link" to="/singleLinkedList">Singly Linked List</NavLink>
           <NavLink className="nav-link" to="/binaryTree">Binary Tree</NavLink>
           <a className="nav-link" href="https://robert-a-johnston.github.io/"
             target="_blank" rel="noreferrer">Portfolio</a>
