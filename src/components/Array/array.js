@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './array.css'
 
 export default function Array() {
-  const [arrayOne, setArrayOne] = useState([])
+  const arrayOne = []
  
 
   function insertArray() {
