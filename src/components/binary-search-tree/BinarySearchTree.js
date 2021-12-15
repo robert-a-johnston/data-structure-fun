@@ -3,6 +3,7 @@ import Tree from 'react-d3-tree'
 import './BinarySearchTree.css'
 
 
+
 class Node {
   constructor(value) {
     this.value = value
@@ -14,7 +15,7 @@ export default function Graph() {
   const[current, setCurrent] = useState('')
   const [data, setData] = useState({ root: null })
   const [verify,setVerify] = useState(false)
-
+  // determines which side of root to place children
   function traverse(obj) {
     if (!obj) return null
 
@@ -38,11 +39,12 @@ export default function Graph() {
         children: children.length && [traverse(obj.left)].length ? children : []
       }
     }
-
+    
     if (obj.right) {
       traverse(obj.right)
     }
   }
+
   // converts data to use in react-d3-tree Tree
   function formatData(data) {
     const res = Object.keys(data).map(key => {
@@ -58,22 +60,25 @@ export default function Graph() {
 
     return res
   }
-
+  // insert value into tree
   function insert(value) {
-    
+    // create new node
     let node = new Node(value)
-
+    // if the root is empty create root node
     if(!data.root) {
       setData({ root: node })
     } else {
       let current = data.root
+      console.log(current)
       while (!!current) {
+        // set node to left of current node if node < current
         if (node.value < current.value) {
           if (!current.left) {
             current.left = node
             break
           }
           current = current.left
+          // set node to right of current node if node > current
         } else if (node.value > current.value) {
           if (!current.right) {
             current.right = node
@@ -85,7 +90,7 @@ export default function Graph() {
         }
       }
     }
-    setVerify(false)
+    // setVerify(false)
     return data
   }
 
@@ -118,7 +123,7 @@ export default function Graph() {
             nodes: {
               node: {
                 circle: {
-                  fill: '#d16ba5',
+                  
                   name: {
                     fontFamily: `'Roboto', sans-serif`,
                     fontSize: '1.6rem'
@@ -127,7 +132,7 @@ export default function Graph() {
               },
               leafNode: {
                 circle: {
-                  fill: '#5ffbf1',
+                 
                   name: {
                     fontFamily: `'Roboto', sans-serif`,
                     fontSize: '1.6rem'
