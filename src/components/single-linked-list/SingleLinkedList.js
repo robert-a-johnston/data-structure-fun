@@ -9,45 +9,33 @@ class Node {
 }
 
 
-
 export default function SingleLinkedList() {
-  const [data, setData] = useState({ head: null })
-  let [size, setSize] = useState(0)
-  const [current, setCurrent] = useState('')
+  const[number, setNumber] = useState(0)
+  const[head, setHead] = useState(null)
+  let[length, setLength] = useState(0)
 
-  function insert(value) {
-    let node = new Node(value)
-    console.log(node)
-    if(!data.head){
-      setData({ head: node })
-      // setSize(++size)
-    } else {
-      let current = data.head
-      while(current.next) {
-        current = current.next
-      }
-      current.next = node
-    }
-    setSize(++size)
-    console.log('size', size)
+
+  function add(value) {
+    setLength(++length)
+    console.log('value', value, length)
+    const node = new Node(value)
+    setHead(node)
+  
+    console.log('node', node)
+    
   }
   return (
     <div>
       <input
-          type="number"
-          name="current"
-          value={current}
-          onChange={e => setCurrent(e.target.value)}
+        type="number"
+        name="number"
+        value={number}
+        onChange={ e => setNumber(e.target.value)}
         />
       <button
-          disabled={!current || isNaN(current)}
-          onClick={() => {
-            insert(parseInt(current, 10))
-            setCurrent('')
-          }}
-        >
-          Add
-        </button>
+        onClick={() =>{
+          add(number)
+        }}>Add</button>
     </div>
   )
 }
