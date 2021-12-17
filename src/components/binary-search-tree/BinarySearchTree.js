@@ -14,7 +14,7 @@ class Node {
 export default function Graph() {
   const[current, setCurrent] = useState('')
   const [data, setData] = useState({ root: null })
-  const [verify,setVerify] = useState(false)
+  // const [verify,setVerify] = useState(false)
   // determines which side of root to place children
   function traverse(obj) {
     if (!obj) return null
