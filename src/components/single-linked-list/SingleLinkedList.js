@@ -11,18 +11,32 @@ class Node {
 
 export default function SingleLinkedList() {
   const[number, setNumber] = useState(0)
+  const[searchNumber, setSearchNumber] = useState(0)
   const[head, setHead] = useState(null)
   let[length, setLength] = useState(0)
 
 
   function add(value) {
     setLength(++length)
-    console.log('value', value, length)
     const node = new Node(value)
+    node.next = head
     setHead(node)
-  
     console.log('node', node)
+    console.log('length', length)
     
+  }
+
+  function search(value){
+    var curr = head
+    while (curr){
+      if(value === curr.value) {
+        console.log('true')
+        return true
+      }
+      console.log(curr)
+      curr = curr.next
+    }
+    console.log(false)
   }
   return (
     <div>
@@ -36,6 +50,17 @@ export default function SingleLinkedList() {
         onClick={() =>{
           add(number)
         }}>Add</button>
+
+      <input
+        type="number"
+        name="searchNumber"
+        value={searchNumber}
+        onChange={ e => setSearchNumber(e.target.value)}
+        />
+      <button
+        onClick={() =>{
+          search(searchNumber)
+        }}>Search</button>
     </div>
   )
 }
