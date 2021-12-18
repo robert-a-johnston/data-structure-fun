@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import Header from './components/header/Header'
 import Home from './components/home/Home'
-import Array from './components/Array/array'
+import ArrayStackQueue from './components/ArrayStackQueue/array-stack-queue'
 import SingleLinkedList from './components/single-linked-list/SingleLinkedList'
 import BinarySearchTree from './components/binary-search-tree/BinarySearchTree'
 
@@ -18,8 +18,8 @@ function App() {
             path='/'
             element={<Home/>}/> 
           <Route
-            path='/array'
-            element={<Array/>}/>
+            path='/arrayStackQueue'
+            element={<ArrayStackQueue/>}/>
            <Route
             path='/singleLinkedList'
             element={<SingleLinkedList/>}/>
