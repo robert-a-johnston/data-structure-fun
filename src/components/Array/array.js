@@ -1,61 +1,75 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import './array.css'
 
 export default function Array() {
-  const arrayOne = []
+  const [number, setNumber] = useState()
+  const [numberDelete, setNumberDelete] = useState()
+  const [arrayOne, setArrayOne] = useState([])
+  let index = 0
  
 
-  function insertArray() {
-    let inputValue = document.getElementById("value").value
-    if(inputValue !== '') arrayOne.push(inputValue)
-    document.getElementById("value").value = ""
-    console.log(arrayOne)
+  function insertArray(value) {
+    if(value) {
+    const addArray = [...arrayOne, value]
+    setArrayOne(addArray)
+  
+    console.log(addArray)}
   }
 
-  function accessArray(){
-    let indexValue = document.getElementById("getValueByIndex").value
-    document.getElementById("getValueByIndex").value = ""
-    console.log(arrayOne[indexValue])
-  }
-
-  function searchArray(){
-    let inputValue = document.getElementById("getValue").value
-    const found = arrayOne.indexOf(inputValue)
-    document.getElementById("getValue").value = ""
-    console.log(found)
-  }
-
-
-  function deleteValueFromArray() {
-    let indexValue = document.getElementById("indexValue").value
-    if (indexValue > -1) {
-      arrayOne.splice(indexValue, 1)
-    }
-    document.getElementById("indexValue").value = ""
-    console.log(arrayOne)
+ 
+  function deleteValueFromArrayByIndex(value) {
+    console.log('value', value)
+    const removeArray = [...arrayOne]
+    removeArray.splice(value, 1)
+    setArrayOne(removeArray)
   }
   return (
     <div>
       <h1>Array Information</h1>
-      {/* set value */}
-      <label for="value">Value</label>
-      <input id="value" type="number"></input>
-      <button type="button" onClick={insertArray}>Push to array</button>
-      <br/>
-      {/* access value */}
-      <label for="getValueByIndex">Index Value</label>
-      <input id="getValueByIndex" type="number" min="0"></input>
-      <button type="button" onClick={accessArray}>Get Index of Value</button>
-      <br/>
-       {/* find index of value */}
-       <label for="getValue">Value</label>
-      <input id="getValue" type="number"></input>
-      <button type="button" onClick={searchArray}>Get Value at Index</button>
-      <br/>
-      {/* delete value */}
-      <label for="indexValue">Index Value</label>
-      <input id="indexValue" type="number" min="0"></input>
-      <button type="button" onClick={deleteValueFromArray}>Remove Value</button>      
+      <div className='button-container'>
+        {/* Add value to array */}
+        <input
+          type="number"
+          name="number"
+          value={number}
+          onChange={ e => setNumber(e.target.value)}
+          />
+        <button
+        onClick={() =>{
+          insertArray(number)
+        }}>Add
+        </button>
+        <br/>
+        
+        {/* delete value */}
+        <input
+          type="number"
+          name="number"
+          value={numberDelete}
+          onChange={ e => setNumberDelete(e.target.value)}
+          />
+        <button
+        onClick={() =>{
+          deleteValueFromArrayByIndex(numberDelete)
+        }}>delete
+        </button>
+      </div> 
+
+      <div className='array'>
+        <div className='array-index-value'>
+          <div>index</div>
+          <div>value</div>
+        </div>
+        {arrayOne.map((value) => 
+          <div 
+            className='array-index-value'
+            key={index++}>
+            <div className='index'>{index}</div>
+            <div className='value'>{value}</div>
+          </div>)}
+      
+      </div>
+           
     </div>
   )
 }
