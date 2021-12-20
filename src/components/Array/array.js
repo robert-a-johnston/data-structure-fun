@@ -12,16 +12,18 @@ export default function Array() {
     if(value) {
     const addArray = [...arrayOne, value]
     setArrayOne(addArray)
-  
     console.log(addArray)}
   }
 
  
   function deleteValueFromArrayByIndex(value) {
-    console.log('value', value)
-    const removeArray = [...arrayOne]
-    removeArray.splice(value, 1)
-    setArrayOne(removeArray)
+    console.log(typeof value)
+    if(value >= 0) {
+      const removeArray = [...arrayOne]
+      removeArray.splice(value, 1)
+      setArrayOne(removeArray)
+    } 
+
   }
   return (
     <div>

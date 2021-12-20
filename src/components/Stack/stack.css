@@ -1,4 +1,3 @@
-
 input[type=number] {
   width: 4em;
 }
@@ -9,18 +8,19 @@ input[type=number] {
 }
 .array{
   display: flex;
-  margin-left: 10%;
 }
 .array-index-value {
   display: flex;
   flex-direction: column;
+}
+.array-index-value{
   border-right: solid;
   border-width: 2px;
   border-color: black;
-  width: 10%;
 }
 .index {
   border-bottom: solid;
+ 
   border-width: 2px;
   border-color: black;
 }

@@ -11,7 +11,8 @@ const Header = () => (
       <Navbar.Brand><h1>Data Structure Fun</h1></Navbar.Brand>
         <Nav>
           <NavLink className="nav-link" to="/">Home</NavLink>
-          <NavLink className="nav-link" to="/arrayStackQueue">Arrays/Stacks/Queues</NavLink>
+          <NavLink className="nav-link" to="/array">Arrays</NavLink>
+          <NavLink className="nav-link" to="/stack">Stacks</NavLink>
           <NavLink className="nav-link" to="/singleLinkedList">Singly Linked List</NavLink>
           <NavLink className="nav-link" to="/binaryTree">Binary Tree</NavLink>
           <a className="nav-link" href="https://robert-a-johnston.github.io/"
