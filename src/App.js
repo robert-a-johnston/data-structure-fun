@@ -5,6 +5,7 @@ import Header from './components/header/Header'
 import Home from './components/home/Home'
 import Array from './components/Array/array'
 import Stack from './components/Stack/stack'
+import Queue from './components/queue/Queue'
 import SingleLinkedList from './components/single-linked-list/SingleLinkedList'
 import BinarySearchTree from './components/binary-search-tree/BinarySearchTree'
 
@@ -24,6 +25,9 @@ function App() {
           <Route
             path='/stack'
             element={<Stack/>}/>
+          <Route
+            path='/queue'
+            element={<Queue/>}/>
           <Route
             path='/singleLinkedList'
             element={<SingleLinkedList/>}/>
