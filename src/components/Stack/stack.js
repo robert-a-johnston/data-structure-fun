@@ -3,24 +3,24 @@ import './stack.css'
 
 export default function Stack() {
   const [number, setNumber] = useState()
-  const [numberDelete, setNumberDelete] = useState()
   const [arrayOne, setArrayOne] = useState([])
   let index = 0
  
 
   function insertArray(value) {
     if(value) {
-    const addArray = [...arrayOne, value]
+    const addArray = [value, ...arrayOne]
     setArrayOne(addArray)
   
     console.log(addArray)}
   }
 
  
-  function deleteValueFromArrayByIndex(value) {
-    console.log('value', value)
+  function deleteValueFromArray() {
     const removeArray = [...arrayOne]
-    removeArray.splice(value, 1)
+    console.log('1', removeArray)
+    removeArray.shift()
+    console.log(removeArray)
     setArrayOne(removeArray)
   }
 
@@ -43,16 +43,11 @@ export default function Stack() {
       <br/>
       
       {/* delete value */}
-      <input
-        type="number"
-        name="number"
-        value={numberDelete}
-        onChange={ e => setNumberDelete(e.target.value)}
-        />
+
       <button
       onClick={() =>{
-        deleteValueFromArrayByIndex(numberDelete)
-      }}>delete
+        deleteValueFromArray()
+      }}>Pop
       </button>
     </div> 
 
