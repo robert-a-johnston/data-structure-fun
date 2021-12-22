@@ -28,7 +28,7 @@ export default function Queue() {
   }
   return (
     <div>
-      <h1>Array Information</h1>
+      <h1>Queue Information</h1>
       <div className='button-container'>
         {/* Add value to array */}
         <input

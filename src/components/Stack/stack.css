@@ -1,10 +1,13 @@
-input[type=number] {
+/* input[type=number] {
   width: 4em;
 }
-
+.container {
+  margin-right: 10%;
+}
 .button-container {
   display: flex;
   margin: 10px;
+  justify-content: center;
 }
 .array{
   display: flex;
@@ -20,7 +23,6 @@ input[type=number] {
 }
 .index {
   border-bottom: solid;
- 
   border-width: 2px;
   border-color: black;
-}
+} */
