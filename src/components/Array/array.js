@@ -59,15 +59,15 @@ export default function Array() {
 
       <div className='array'>
         <div className='array-index-value'>
-          <div>index</div>
-          <div>value</div>
+          <h2>index</h2>
+          <h2>value</h2>
         </div>
         {arrayOne.map((value) => 
           <div 
             className='array-index-value'
             key={index++}>
-            <div className='index'>{index}</div>
-            <div className='value'>{value}</div>
+            <h2 className='index'>{index}</h2>
+            <h2 className='value'>{value}</h2>
           </div>)}
       
       </div>
