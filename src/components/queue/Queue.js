@@ -1,39 +1,38 @@
 import React, { useState } from 'react'
+import QueueInfo from '../info/QueueInfo'
 import './queue.css'
-
 
 export default function Queue() {
   const [number, setNumber] = useState()
-  const [numberDelete, setNumberDelete] = useState()
   const [arrayOne, setArrayOne] = useState([])
   let index = 0
  
 
   function insertArray(value) {
-    if(value) {
-    const addArray = [...arrayOne, value]
+    if(value && arrayOne.length < 10) {
+    const addArray = [value, ...arrayOne]
     setArrayOne(addArray)
     console.log(addArray)}
   }
 
  
-  function deleteValueFromArrayByIndex(value) {
-    console.log(typeof value)
-    if(value >= 0) {
+  function dequeue() {
+    if(arrayOne.length > 0) {
       const removeArray = [...arrayOne]
-      removeArray.splice(value, 1)
+      removeArray.splice(-1)
       setArrayOne(removeArray)
     } 
 
   }
   return (
     <div>
-      <h1>Queue Information</h1>
+      <h1>Create a Queue</h1>
       <div className='button-container'>
-        {/* Add value to array */}
+        {/* Add value to stack */}
         <input
           type="number"
           name="number"
+          placeholder='0'
           value={number}
           onChange={ e => setNumber(e.target.value)}
           />
@@ -45,34 +44,28 @@ export default function Queue() {
         <br/>
         
         {/* delete value */}
-        <input
-          type="number"
-          name="number"
-          value={numberDelete}
-          onChange={ e => setNumberDelete(e.target.value)}
-          />
         <button
         onClick={() =>{
-          deleteValueFromArrayByIndex(numberDelete)
-        }}>delete
+          dequeue()
+        }}>Dequeue
         </button>
       </div> 
 
       <div className='array'>
         <div className='array-index-value'>
-          <div>index</div>
-          <div>value</div>
+          <h2>index</h2>
+          <h2>value</h2>
         </div>
         {arrayOne.map((value) => 
           <div 
             className='array-index-value'
             key={index++}>
-            <div className='index'>{index}</div>
-            <div className='value'>{value}</div>
+            <h2 className='index'>{index}</h2>
+            <h2 className='value'>{value}</h2>
           </div>)}
-      
       </div>
-           
+      <h1>Queue Information</h1>
+      <div><QueueInfo/></div> 
     </div>
   )
 }

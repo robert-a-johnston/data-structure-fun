@@ -5,7 +5,7 @@ export default function ArrayInfo() {
   return (
     <div className='container'>
       <div className='time-space-complexity'>
-        <h3>Array Time Complexity</h3>
+        <h3>Queue Time Complexity</h3>
         <table>
           <tr>
             <th>Event</th>
@@ -13,7 +13,7 @@ export default function ArrayInfo() {
             <th>Explanation</th>
           </tr>
           <tr>
-            <td>Access by Index</td>
+            <td>Access</td>
             <td>O(1)</td>
             <td>Can directly access any value on the table by index number.</td>
           </tr>
@@ -40,11 +40,11 @@ export default function ArrayInfo() {
               access the value by the index number and do not have to iterate through the array.</td>
           </tr>   
         </table>
-        <p>n = number of elements in array</p>
-        <h3>Array Space Complexity = O(n)</h3>
+        <p>n = number of elements in queue</p>
+        <h3>Queue Space Complexity = O(n)</h3>
       </div>
       <div className='information'>
-        <h3>Important Points About Arrays</h3>
+        <h3>Important Point About Arrays</h3>
         <ul>
           <li>Arrays typically begin with 0 as the first index.</li>
           <li>Different languages have different implementations of arrays.  As an example
