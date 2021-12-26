@@ -59,7 +59,7 @@ export default function Array() {
         }}>Delete by Index Number
         </button>
       </div> 
-
+        {/* Display array */}
       <div className='array'>
         <div className='array-index-value'>
           <h2>index</h2>

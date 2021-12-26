@@ -15,6 +15,9 @@ export default function SingleLinkedList() {
   const[removeNumber, setRemoveNumber] = useState(0)
   const[head, setHead] = useState(null)
   let[length, setLength] = useState(0)
+  // used for displaying nodes/list
+  const [arrayOne, setArrayOne] = useState([])
+  let index = 0
 
   // sets most recent added node to head
   function add(value) {
@@ -24,8 +27,12 @@ export default function SingleLinkedList() {
     node.next = head
     setHead(node)
     console.log('node', node)
-    console.log('length', length) 
+    console.log('length', length)
+    const addArray = [value, ...arrayOne]
+    setArrayOne(addArray)
+    console.log(addArray) 
   }
+
   // looks for value O(n)
   function search(value){
     let curr = head
@@ -47,7 +54,7 @@ export default function SingleLinkedList() {
       console.log('empty list')
       return
     }
-    // removes only the head value
+    // removes if only the head value exists
     if(length === 1){
       setLength(--length)
       setHead(null)
@@ -58,15 +65,12 @@ export default function SingleLinkedList() {
     // search through list
     while(node) {
       // if you find the value
-      console.log(node.value, value)
       if(node.value === value){
-        console.log('node.next', node.next)
         // set the previous node's value to 
         // node value
         if(node.next.next !== null) preNode.next = node.next
         // remove the node with the value
         node.next = null
-
         setLength(--length)
         console.log('length after remove', length)
         return
@@ -112,6 +116,22 @@ export default function SingleLinkedList() {
         onClick={() =>{
           remove(removeNumber)
         }}>Remove</button>
+
+
+<div className='array'>
+        <div className='array-index-value'>
+          <h2>points</h2>
+          <h2>value</h2>
+        </div>
+        {arrayOne.map((value) => 
+          <div 
+            className='array-index-value'
+            key={index++}>
+            <h2 className='index'>
+              {index === arrayOne.length - 1 ? 'null' : arrayOne[index + 1]}</h2>
+            <h2 className='value'>{value}</h2>
+          </div>)}
+      </div>
     </div>
   )
 }

@@ -8,7 +8,7 @@ export default function Queue() {
   let index = 0
  
 
-  function insertArray(value) {
+  function enqueue(value) {
     if(value && arrayOne.length < 10) {
     const addArray = [value, ...arrayOne]
     setArrayOne(addArray)
@@ -38,7 +38,7 @@ export default function Queue() {
           />
         <button
         onClick={() =>{
-          insertArray(number)
+          enqueue(number)
         }}>Add
         </button>
         <br/>
