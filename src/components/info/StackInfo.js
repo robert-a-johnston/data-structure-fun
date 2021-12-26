@@ -46,6 +46,7 @@ export default function StackInfo() {
         <li>Is a LAST IN FIRST OUT (LIFO) data structure.</li>
         <li>An insertion is called a PUSH.</li>
         <li>A deletion is called a POP.</li>
+        <li>Used in a depth first search algorithm.</li>
       </ul>
     </div>
   </div>

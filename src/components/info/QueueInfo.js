@@ -14,46 +14,43 @@ export default function ArrayInfo() {
           </tr>
           <tr>
             <td>Access</td>
-            <td>O(1)</td>
-            <td>Can directly access any value on the table by index number.</td>
+            <td>O(n)</td>
+            <td>You may have to iterate through all values in the queue to access a value.
+            </td>
           </tr>
           <tr>
             <td>Search for Value</td>
             <td>O(n)</td>
-            <td>May have to iterate through all values in array to find value.</td>
+            <td>May have to iterate through all values in queue to find value.</td>
           </tr>
           <tr>
             <td>Insert</td>
-            <td>O(n) or maybe O(1)</td>
-            <td>Insertion depends on method of insertion.  If inserting values at specific index
-              other than initial index may have to iterate over all values in array.  If you only
-              add to an array by pushing a value to the first position then constant time.
+            <td>O(1)</td>
+            <td>Enqueueing only occurs from the end of the queue by definition.
             </td>
           </tr>
           <tr>
             <td>Delete</td>
-            <td>O(n) or maybe O(1)</td>
-            <td>Deletion depends on method of deletion.  If deleting values at specific index
-              other than initial index may have to iterate over all values in array.  If you only
-              remove a value from an array by popping a value from the first position then constant time.
-              Also deleting by index as in the above example is constant time because you 
-              access the value by the index number and do not have to iterate through the array.</td>
+            <td>O(1)</td>
+            <td>Dequeueing only occurs from the front of the queue by definition.</td>
           </tr>   
         </table>
         <p>n = number of elements in queue</p>
         <h3>Queue Space Complexity = O(n)</h3>
       </div>
       <div className='information'>
-        <h3>Important Point About Arrays</h3>
+      <p><b>Definition:</b> A queue is a collection of entities 
+      that are maintained in a sequence and can be modified by the addition of entities 
+      at one end of the sequence and the removal of entities from the other end of 
+      the sequence.
+      </p>
+        <h3>Important Points About Queues</h3>
         <ul>
-          <li>Arrays typically begin with 0 as the first index.</li>
-          <li>Different languages have different implementations of arrays.  As an example
-            Java requires defining the length of an array and that length cannot be changed.  
-            This is not the case with JavaScript where array length may change.
-          </li>
-          <li>Arrays can be used to implement other data structures like linked-lists, stacks, and 
-            queues.
-          </li>
+          <li>Can be implemented with other data types like arrays or linked lists.</li>
+          <li>Is a FIRST IN FIRST OUT (FIFO) data structure.</li>
+          <li>Insertion is called enqueueing.</li>
+          <li>Deleting is called dequeueing.</li>
+          <li>Used for breath first search algorithm.</li>
         </ul>
       </div>
     </div>
