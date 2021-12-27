@@ -39,7 +39,7 @@ export default function Stack() {
         <button
         onClick={() =>{
           insertArray(number)
-        }}>Add
+        }}>Push
         </button>
         <br/>
         

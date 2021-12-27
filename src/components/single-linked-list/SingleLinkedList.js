@@ -78,6 +78,12 @@ export default function SingleLinkedList() {
       preNode = node
       node = node.next
     }
+    
+      const removeArray = [...arrayOne]
+      const indexValue = removeArray.findIndex(value)
+      removeArray.splice(indexValue, 1)
+      setArrayOne(removeArray)
+    
     console.log('value not found')
     }
 
